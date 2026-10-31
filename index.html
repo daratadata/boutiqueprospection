@@ -53,7 +53,7 @@ textarea{min-height:90px;resize:vertical}
 
 <div class="box"><h2>2. Votre offre</h2>
 <label class="opt" style="margin-top:0"><input type="radio" name="offre" value="lp"><div><b>Landing Page + CRM</b><small>Page de vente, formulaire, suivi des prospects et relances</small></div><div class="pr">Devis<br>gratuit</div></label>
-<label class="opt" style="margin-top:14px"><span class="star">★ LE PLUS CHOISI</span><input type="radio" name="offre" value="bo" checked><div><b>Boutique en ligne</b><small>Catalogue ou menu, panier, QR code, commande WhatsApp, livraison par commune</small></div><div class="pr"><s>100 000 F</s>50 000 F<br>promo</div></label>
+<label class="opt" style="margin-top:14px"><span class="star">★ LE PLUS CHOISI</span><input type="radio" name="offre" value="bo" checked><div><b>Boutique en ligne</b><small>Catalogue ou menu, panier, QR code, commande WhatsApp, livraison par commune</small></div><div class="pr"><s>100 000 F</s>50 000 F<br>promo jusqu’au<br>30 nov. 2026</div></label>
 <label class="opt"><input type="radio" name="offre" value="pro"><div><b>Boutique Pro</b><small>Suivi commandes, CRM clients, statistiques, stocks</small></div><div class="pr">Devis<br>gratuit</div></label>
 <label class="opt" style="margin-top:2px"><input type="radio" name="offre" value="no"><div><b>Je ne sais pas encore</b><small>Conseillez-moi selon mon activité</small></div></label></div>
 
@@ -92,7 +92,7 @@ function tab(n){$('s1').classList.toggle('on',n==1);$('s2').classList.toggle('on
 function offre(){return document.querySelector('input[name=offre]:checked').value}
 function opts(){var a=[];if($('o_db').checked)a.push('Base de données pro');if($('o_dom').checked)a.push('Nom de domaine');return a}
 function cout(){var o=OFF[offre()],a=opts(),t,n='';
- if(o.p){t='50 000 F CFA';n='Offre promotionnelle (au lieu de 100 000 F).'}else{t='Sur devis gratuit';n='Nous vous répondons avec un prix adapté à votre projet.'}
+ if(o.p){t='50 000 F CFA';n='Offre promotionnelle valable jusqu’au 30 novembre 2026 (au lieu de 100 000 F).'}else{t='Sur devis gratuit';n='Nous vous répondons avec un prix adapté à votre projet.'}
  if(a.length)n+=' Options en supplément : '+a.join(' et ')+' (frais additionnels, selon devis).';
  return{t:t,n:n}}
 function maj(){document.querySelectorAll('.opt').forEach(function(l){var i=l.querySelector('input');l.classList.toggle('sel',i.checked)});var c=cout();$('cv').textContent=c.t;$('cn').textContent=c.n;save()}
@@ -107,7 +107,7 @@ function envoyer(){var ok=true,nom=$('nom').value.trim(),tel=$('tel').value.repl
  L.push('👤 Nom : '+nom,'📞 WhatsApp : '+$('tel').value.trim());
  if($('act').value.trim())L.push('🏪 Activité : '+$('act').value.trim());
  if($('com').value.trim())L.push('📍 Commune : '+$('com').value.trim());
- L.push('','🛒 Offre : *'+o.n+'*','💰 Coût estimé : '+c.t+(o.p?' (promo, au lieu de 100 000 F)':''));
+ L.push('','🛒 Offre : *'+o.n+'*','💰 Coût estimé : '+c.t+(o.p?' (promo valable jusqu’au 30/11/2026, au lieu de 100 000 F)':''));
  L.push('➕ Options (frais additionnels) : '+(a.length?a.join(', '):'aucune'));
  if($('nb').value)L.push('📦 Produits/services : '+$('nb').value);
  if($('dl').value)L.push('⏱️ Délai : '+$('dl').value);
