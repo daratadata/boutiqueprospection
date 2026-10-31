@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>InnovaData – Votre projet</title>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#2B57A6">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<style>
+:root{--b:#2B57A6;--bd:#16336B;--y:#FDBE16;--r:#D93A3A;--bg:#f4f6fb;--t:#111;--card:#fff;--line:#e3e8f2;--mut:#666}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1424;--t:#f2f4fa;--card:#18203a;--line:#2a3558;--mut:#a9b3cf}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--t);padding-bottom:calc(90px + env(safe-area-inset-bottom))}
+header{background:linear-gradient(135deg,var(--bd),var(--b));color:#fff;padding:calc(14px + env(safe-area-inset-top)) 18px 18px;border-bottom:5px solid var(--y)}
+.hd{display:flex;align-items:center;gap:12px}.hd img{width:54px;height:54px;border-radius:12px;background:#fff;object-fit:contain}
+header h1{font-size:19px}header p{font-size:13px;opacity:.9;margin-top:2px}
+.tabs{display:flex;gap:8px;padding:12px 16px 0;max-width:640px;margin:auto}
+.tabs button{flex:1;border:0;border-radius:12px;padding:11px;font-size:14px;font-weight:700;background:var(--card);color:var(--t);border:2px solid var(--line)}
+.tabs button.on{background:var(--b);color:#fff;border-color:var(--b)}
+main{max-width:640px;margin:auto;padding:14px 16px}
+.sec{display:none}.sec.on{display:block}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}
+.box h2{font-size:15px;margin-bottom:10px;color:var(--b)}@media(prefers-color-scheme:dark){.box h2{color:#8fb2f0}}
+label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--t);font:inherit;font-size:15px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--b);border-color:var(--b)}
+textarea{min-height:90px;resize:vertical}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:12px;border:2px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer;position:relative}
+.opt input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--b)}
+.opt.sel{border-color:var(--b);background:rgba(43,87,166,.08)}
+.opt b{font-size:14px;display:block}.opt small{font-weight:400;font-size:12px;color:var(--mut);display:block;margin-top:2px}
+.opt .pr{margin-left:auto;text-align:right;font-size:12px;font-weight:700;white-space:nowrap;color:var(--r)}
+.opt .pr s{color:var(--mut);font-weight:500;display:block}
+.star{position:absolute;top:-9px;right:10px;background:var(--r);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.cost{background:var(--bd);color:#fff;border-radius:16px;padding:14px;margin-bottom:14px}
+.cost .l{font-size:12px;opacity:.85}.cost .v{font-size:26px;font-weight:800;color:var(--y);margin:2px 0}
+.cost .n{font-size:12px;opacity:.9;line-height:1.4}
+.send{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line)}
+.send button{display:block;width:100%;max-width:608px;margin:auto;background:#25D366;color:#fff;border:0;border-radius:14px;padding:15px;font-size:16px;font-weight:800}
+.err{color:var(--r);font-size:12px;margin-top:4px;display:none}
+.real{display:flex;gap:12px;margin-bottom:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.real img{width:110px;object-fit:cover;object-position:top;flex:none}
+.real div{padding:12px 12px 12px 0}.real b{font-size:15px}.real p{font-size:12.5px;color:var(--mut);margin:3px 0 8px}
+.real a{display:inline-block;background:var(--b);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:10px}
+.ghost{width:100%;border:2px solid var(--b);background:transparent;color:var(--b);border-radius:12px;padding:12px;font-weight:700;font-size:14px}@media(prefers-color-scheme:dark){.ghost{color:#8fb2f0;border-color:#8fb2f0}}
+</style></head><body>
+<header><div class="hd"><img src="icons/icon-192.png" alt="InnovaData"><div><h1>InnovaData</h1><p>Boutiques en ligne &amp; landing pages · Abidjan</p></div></div></header>
+<div class="tabs"><button id="t1" class="on" onclick="tab(1)">Mon besoin</button><button id="t2" onclick="tab(2)">Réalisations</button></div>
+<main>
+<div id="s1" class="sec on">
+<div class="box"><h2>1. Vos informations</h2>
+<label for="nom">Nom et prénom *</label><input id="nom" autocomplete="name" placeholder="Ex : Awa Koné"><div class="err" id="e_nom">Indiquez votre nom.</div>
+<label for="tel">Numéro WhatsApp / téléphone *</label><input id="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ex : 07 00 00 00 00"><div class="err" id="e_tel">Indiquez un numéro valide.</div>
+<label for="act">Votre activité / ce que vous vendez</label><input id="act" placeholder="Ex : boutique, restaurant, livraison de repas, commerce…">
+<label for="com">Commune</label><input id="com" placeholder="Ex : Cocody, Yopougon, Marcory…"></div>
+
+<div class="box"><h2>2. Votre offre</h2>
+<label class="opt" style="margin-top:0"><input type="radio" name="offre" value="lp"><div><b>Landing Page + CRM</b><small>Page de vente, formulaire, suivi des prospects et relances</small></div><div class="pr">Devis<br>gratuit</div></label>
+<label class="opt" style="margin-top:14px"><span class="star">★ LE PLUS CHOISI</span><input type="radio" name="offre" value="bo" checked><div><b>Boutique en ligne</b><small>Catalogue ou menu, panier, QR code, commande WhatsApp, livraison par commune</small></div><div class="pr"><s>100 000 F</s>50 000 F<br>promo</div></label>
+<label class="opt"><input type="radio" name="offre" value="pro"><div><b>Boutique Pro</b><small>Suivi commandes, CRM clients, statistiques, stocks</small></div><div class="pr">Devis<br>gratuit</div></label>
+<label class="opt" style="margin-top:2px"><input type="radio" name="offre" value="no"><div><b>Je ne sais pas encore</b><small>Conseillez-moi selon mon activité</small></div></label></div>
+
+<div class="box"><h2>3. Options en supplément <small style="font-weight:500;color:var(--mut)">(frais additionnels)</small></h2>
+<label class="opt" style="margin-top:0"><input type="checkbox" id="o_db"><div><b>Base de données pro</b><small>Sécurisée, vos données sauvegardées</small></div></label>
+<label class="opt"><input type="checkbox" id="o_dom"><div><b>Nom de domaine</b><small>Ex : maboutique.com</small></div></label></div>
+
+<div class="box"><h2>4. Détails du projet</h2>
+<label for="nb">Nombre de produits / services</label>
+<select id="nb"><option value="">Choisir…</option><option>Moins de 10</option><option>10 à 30</option><option>30 à 100</option><option>Plus de 100</option></select>
+<label for="dl">Délai souhaité</label>
+<select id="dl"><option value="">Choisir…</option><option>Urgent (cette semaine)</option><option>Sous 2 semaines</option><option>Ce mois-ci</option><option>Pas pressé</option></select>
+<label for="cm">Commentaire / besoins particuliers</label><textarea id="cm" placeholder="Décrivez ce que vous attendez : couleurs, produits, livraison, paiement…"></textarea></div>
+
+<div class="cost"><div class="l">Coût estimé</div><div class="v" id="cv">50 000 F CFA</div><div class="n" id="cn"></div></div>
+</div>
+
+<div id="s2" class="sec">
+<div class="box"><h2>Ce que nous avons réalisé</h2><p style="font-size:13px;color:var(--mut)">Touchez « Voir la boutique » pour ouvrir un vrai site livré à un client.</p></div>
+<div class="real"><img src="img/krk.jpg" alt="KRK Multi-Services"><div><b>KRK Multi-Services</b><p>Informatique et cartes PVC : ordinateurs Dell, commande en ligne, livraison en Côte d’Ivoire.</p><a href="https://krkshop.netlify.app" target="_blank" rel="noopener">Voir la boutique</a></div></div>
+<div class="real"><img src="img/shelem.jpg" alt="Shelem Food"><div><b>Shelem Food</b><p>Restauration et livraison : menus de la semaine, plats braisés, commande par QR code.</p><a href="https://shelem-foodv1.vercel.app" target="_blank" rel="noopener">Voir le site</a></div></div>
+<div class="real"><img src="img/odomiga.jpg" alt="Odomiga Yé Immobilier"><div><b>Odomiga Yé Immobilier</b><p>Terrains à Adzopé : site de présentation avec formulaire de demande de devis.</p><a href="https://odomigaye-ci.netlify.app" target="_blank" rel="noopener">Voir le site</a></div></div>
+<div class="real"><img src="img/landrydjassa.jpg" alt="LandryDjassa"><div><b>LandryDjassa</b><p>Boutique de mode : vêtements, chaussures, sacs, montres, bijoux.</p><a href="https://landrydjassa-site.vercel.app" target="_blank" rel="noopener">Voir la boutique</a></div></div>
+<div class="real"><img src="img/amandine.jpg" alt="Amandine"><div><b>Amandine</b><p>Boubous, chaussures et sacs, parfums, bijoux, soins naturels.</p><a href="https://amandineshop.netlify.app" target="_blank" rel="noopener">Voir la boutique</a></div></div>
+<div class="real"><img src="img/ktiz.jpg" alt="Ktiz Care Beauty"><div><b>Ktiz Care Beauty</b><p>Soins du corps et du visage : gels douche, savons, crèmes.</p><a href="https://btizcarebeauty.netlify.app" target="_blank" rel="noopener">Voir la boutique</a></div></div>
+<button class="ghost" onclick="wa('Bonjour InnovaData, je souhaite voir d\u2019autres réalisations similaires à mon activité.')">Demander d’autres exemples sur WhatsApp</button>
+<button class="ghost" style="margin-top:10px" onclick="tab(1)">Je lance mon projet →</button>
+</div>
+</main>
+<div class="send" id="sendbar"><button onclick="envoyer()">Envoyer ma demande sur WhatsApp</button></div>
+<script>
+var NUM='2250504695884';
+var OFF={lp:{n:'Landing Page + CRM',p:null},bo:{n:'Boutique en ligne',p:50000},pro:{n:'Boutique Pro',p:null},no:{n:'Offre à conseiller',p:null}};
+var $=function(i){return document.getElementById(i)};
+function tab(n){$('s1').classList.toggle('on',n==1);$('s2').classList.toggle('on',n==2);$('t1').classList.toggle('on',n==1);$('t2').classList.toggle('on',n==2);$('sendbar').style.display=n==1?'block':'none';window.scrollTo(0,0)}
+function offre(){return document.querySelector('input[name=offre]:checked').value}
+function opts(){var a=[];if($('o_db').checked)a.push('Base de données pro');if($('o_dom').checked)a.push('Nom de domaine');return a}
+function cout(){var o=OFF[offre()],a=opts(),t,n='';
+ if(o.p){t='50 000 F CFA';n='Offre promotionnelle (au lieu de 100 000 F).'}else{t='Sur devis gratuit';n='Nous vous répondons avec un prix adapté à votre projet.'}
+ if(a.length)n+=' Options en supplément : '+a.join(' et ')+' (frais additionnels, selon devis).';
+ return{t:t,n:n}}
+function maj(){document.querySelectorAll('.opt').forEach(function(l){var i=l.querySelector('input');l.classList.toggle('sel',i.checked)});var c=cout();$('cv').textContent=c.t;$('cn').textContent=c.n;save()}
+function save(){try{localStorage.setItem('ida',JSON.stringify({nom:$('nom').value,tel:$('tel').value,act:$('act').value,com:$('com').value,nb:$('nb').value,dl:$('dl').value,cm:$('cm').value}))}catch(e){}}
+function load(){try{var d=JSON.parse(localStorage.getItem('ida')||'{}');for(var k in d)if($(k))$(k).value=d[k]}catch(e){}}
+function wa(m){window.open('https://wa.me/'+NUM+'?text='+encodeURIComponent(m),'_blank')}
+function envoyer(){var ok=true,nom=$('nom').value.trim(),tel=$('tel').value.replace(/\D/g,'');
+ $('e_nom').style.display=nom?'none':'block';$('e_tel').style.display=tel.length>=8?'none':'block';
+ if(!nom||tel.length<8){window.scrollTo(0,0);return}
+ var c=cout(),o=OFF[offre()],a=opts(),L=[];
+ L.push('*Nouvelle demande – InnovaData*','');
+ L.push('👤 Nom : '+nom,'📞 WhatsApp : '+$('tel').value.trim());
+ if($('act').value.trim())L.push('🏪 Activité : '+$('act').value.trim());
+ if($('com').value.trim())L.push('📍 Commune : '+$('com').value.trim());
+ L.push('','🛒 Offre : *'+o.n+'*','💰 Coût estimé : '+c.t+(o.p?' (promo, au lieu de 100 000 F)':''));
+ L.push('➕ Options (frais additionnels) : '+(a.length?a.join(', '):'aucune'));
+ if($('nb').value)L.push('📦 Produits/services : '+$('nb').value);
+ if($('dl').value)L.push('⏱️ Délai : '+$('dl').value);
+ if($('cm').value.trim())L.push('','💬 Commentaire : '+$('cm').value.trim());
+ wa(L.join('\n'))}
+document.addEventListener('change',maj);document.addEventListener('input',save);
+load();maj();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){});
+</script></body></html>
